@@ -1,0 +1,19 @@
+/* Variables de diseño. La paleta sale de los ingredientes: aloe (fondo), romero (tinta),
+   rosa mosqueta (único acento vivo) y kraft (tapones). Se mantienen los nombres históricos
+   (--cream, --green…) porque otras hojas los usan; su valor ya no coincide con el nombre. */
+:root {
+  --cream: #ecefdc; /* fondo de página: aloe claro */
+  --sand: #dfe5c8; /* franjas: aloe más profundo */
+  --surface: #f8f6ec; /* superficies elevadas: avena */
+  --sage: #9bb07a;
+  --green: #2c4733; /* acción principal: romero */
+  --green-dark: #17261c; /* tinta de títulos */
+  --terracotta: #b8301f; /* acento: rosa mosqueta */
+  --kraft: #c9a56b;
+  --text: #1f2a22;
+  --muted: #54604d;
+  --radius: 8px;
+  --shadow: 0 10px 30px rgba(23, 38, 28, 0.08);
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
+}

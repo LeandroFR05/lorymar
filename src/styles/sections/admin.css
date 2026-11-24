@@ -1,0 +1,110 @@
+/* Panel de administración: menú lateral + contenido */
+.admin-panel {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+
+.admin-panel__menu {
+  padding: 2rem 1.25rem;
+  background: var(--sand);
+}
+
+.admin-panel__menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.admin-panel__link {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: 500 0.95rem var(--font-sans);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.admin-panel__link:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.admin-panel__link[aria-current='page'] {
+  background: var(--green);
+  color: #fff;
+}
+
+.admin-panel__content {
+  padding: 2.5rem;
+}
+
+.admin-panel__content h1 {
+  margin: 0 0 1.5rem;
+}
+
+/* Formulario de alta de productos */
+.admin-form {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 560px;
+}
+
+.admin-form__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.admin-form__field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.admin-form__field input[type='text'],
+.admin-form__field input[type='number'],
+.admin-form__field select,
+.admin-form__field textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid var(--sand);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font: 1rem var(--font-sans);
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.admin-form__field textarea {
+  resize: vertical;
+}
+
+.admin-form__field input:focus,
+.admin-form__field select:focus,
+.admin-form__field textarea:focus {
+  border-color: var(--green);
+}
+
+.admin-form__preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 0.4rem;
+}
+
+.admin-form__message {
+  margin: 0;
+  color: var(--green-dark);
+  font-size: 0.9rem;
+}
+
+.admin-form .btn {
+  justify-self: start;
+}

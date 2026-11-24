@@ -1,0 +1,35 @@
+/* Opiniones de clientes */
+.testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.testimonial {
+    margin: 0;
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.testimonial__stars {
+    color: var(--terracotta);
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+}
+
+.testimonial blockquote {
+    margin: 0 0 1.2rem;
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--text);
+}
+
+.testimonial figcaption {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green);
+}

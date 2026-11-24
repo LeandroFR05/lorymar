@@ -1,0 +1,106 @@
+/* Adaptaciones responsive. Se agrupan aquí para ver toda la adaptación móvil en un vistazo: cada @media mezcla reglas de varias secciones. */
+
+@media (max-width: 900px) {
+
+  .hero__inner,
+  .about__inner,
+  .newsletter__box {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 7.5rem;
+  }
+
+  .hero__arch {
+    height: 400px;
+  }
+
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__visual {
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__inner>div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .navbar__toggle {
+    display: block;
+    z-index: 2;
+  }
+
+  .navbar__links {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background: var(--cream);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .navbar__links.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar__links a:not(.btn) {
+    font-size: 1.4rem;
+    font-family: var(--font-serif);
+    color: var(--green-dark);
+  }
+}
+
+@media (max-width: 560px) {
+  .values__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .about__stat {
+    right: 0.5rem;
+    bottom: -1rem;
+  }
+
+  .newsletter__form {
+    flex-direction: column;
+    background: none;
+    padding: 0;
+  }
+
+  .newsletter__form input {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 0.95rem 1.2rem;
+  }
+
+  .admin-login__dialog {
+    padding: 2rem 1.5rem;
+  }
+}
+@media (max-width: 720px) {
+  /* Panel admin: el menú pasa arriba del contenido */
+  .admin-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-panel__content {
+    padding: 1.5rem 1.25rem;
+  }
+}

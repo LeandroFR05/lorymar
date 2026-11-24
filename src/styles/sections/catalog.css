@@ -1,0 +1,86 @@
+/* Estados del catálogo: carga, error con reintento, vacío e incompleto.
+   No dependen solo del color: cada uno lleva icono y texto (RNF-6). */
+.catalog-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  border: 1.5px solid var(--sand);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.catalog-feedback__message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.catalog-feedback__detail {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Icono textual: refuerza el estado sin depender del color */
+.catalog-feedback__icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.catalog-feedback--loading {
+  flex-direction: row;
+  align-items: center;
+  color: var(--muted);
+}
+
+.catalog-feedback--loading .catalog-feedback__icon {
+  animation: catalogPulse 1.4s ease-in-out infinite;
+}
+
+.catalog-feedback--error {
+  border-color: var(--terracotta);
+}
+
+.catalog-feedback--error .catalog-feedback__icon {
+  color: var(--terracotta);
+}
+
+.catalog-feedback--empty {
+  border-color: var(--sand);
+  color: var(--muted);
+}
+
+.catalog-feedback--warning {
+  border-color: var(--kraft);
+  background: var(--surface);
+  color: var(--green-dark);
+}
+
+.catalog-feedback--warning .catalog-feedback__icon {
+  color: var(--terracotta);
+}
+
+@keyframes catalogPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

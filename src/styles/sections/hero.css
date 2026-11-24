@@ -1,0 +1,144 @@
+/* Hero "botica": un frasco sobre una repisa, dentro de un arco de ventana
+   que se tiñe con el color del producto en el carrusel */
+.hero {
+  padding: 9rem 0 5rem;
+  overflow: hidden;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Arco: el fondo transiciona suavemente entre productos (es el único movimiento autónomo) */
+.hero__arch {
+  width: min(100%, 380px);
+  height: 440px;
+  border-radius: 999px 999px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: background-color 0.9s ease;
+}
+
+/* Repisa sobre la que se apoya el frasco */
+.hero__shelf {
+  width: min(100%, 460px);
+  height: 8px;
+  background: var(--green-dark);
+  border-radius: 2px;
+}
+
+.hero__bottle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: hero-fade 0.7s ease;
+}
+
+.hero__bottle-cap {
+  width: 58px;
+  height: 46px;
+  background: var(--kraft);
+  border-radius: 6px 6px 2px 2px;
+}
+
+/* Cristal oscuro con etiqueta de papel */
+.hero__bottle-body {
+  width: 170px;
+  height: 250px;
+  margin-top: -2px;
+  border-radius: 22px 22px 6px 6px;
+  background: linear-gradient(100deg, #2a3d2f 0%, var(--green-dark) 60%);
+  display: grid;
+  place-items: center;
+}
+
+.hero__bottle-label {
+  width: 128px;
+  padding: 1.1rem 0.6rem;
+  background: var(--surface);
+  color: var(--green-dark);
+  text-align: center;
+  border-radius: 3px;
+}
+
+.hero__bottle-label small {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.hero__bottle-label strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-variation-settings: 'SOFT' 100;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0.2rem 0 0.5rem;
+}
+
+.hero__bottle-price {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Indicador del carrusel: posición actual bajo la repisa */
+.hero__dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+.hero__dot {
+  width: 10px;
+  height: 4px;
+  background: rgba(23, 38, 28, 0.2);
+  transition: background-color 0.3s, width 0.3s;
+}
+
+.hero__dot--active {
+  width: 26px;
+  background: var(--terracotta);
+}
+
+/* Fundido del frasco al cambiar de producto (solo opacity) */
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Respeta la preferencia de movimiento reducido: sin animaciones ni transiciones autónomas. */
+@media (prefers-reduced-motion: reduce) {
+  .hero__arch,
+  .hero__dot {
+    transition: none;
+  }
+
+  .hero__bottle {
+    animation: none;
+  }
+}

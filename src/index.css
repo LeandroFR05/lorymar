@@ -1,0 +1,15 @@
+/* Punto de entrada de estilos. El orden es parte de la cascada: variables → base → botones → secciones → responsive. */
+@import './styles/variables.css';
+@import './styles/base.css';
+@import './styles/buttons.css';
+@import './styles/sections/navbar.css';
+@import './styles/sections/hero.css';
+@import './styles/sections/values.css';
+@import './styles/sections/products.css';
+@import './styles/sections/catalog.css';
+@import './styles/sections/about.css';
+@import './styles/sections/testimonials.css';
+@import './styles/sections/newsletter.css';
+@import './styles/sections/footer.css';
+@import './styles/sections/admin.css';
+@import './styles/responsive.css';

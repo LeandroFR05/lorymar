@@ -1,0 +1,23 @@
+/* Franja de valores de la marca: texto sobrio sobre un tono más profundo */
+.values {
+  background: var(--sand);
+  padding: 3.5rem 0;
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.value h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.value p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 28ch;
+}
