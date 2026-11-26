@@ -28,6 +28,8 @@ export function useCatalog() {
     }
   }, [])
 
+
+
   // Aplica el resultado de una lectura solo si el componente sigue montado y la
   // respuesta corresponde a la petición más reciente.
   const applyResult = useCallback((rows, loadError) => {
@@ -45,22 +47,28 @@ export function useCatalog() {
     setStatus(READY_STATUS)
   }, [])
 
+
+
+
   // Primera carga: el estado ya nace en "loading", así que no hace falta reiniciarlo.
   useEffect(() => {
     const requestId = requestIdRef.current + 1
     requestIdRef.current = requestId
 
     fetchCatalog(supabase).then(
+      // Devuelve las filas de las tablas
       (rows) => {
         if (requestIdRef.current !== requestId) return
         applyResult(rows, null)
       },
+      // Devuelve error si no se pudo leer el catalogo
       (loadError) => {
         if (requestIdRef.current !== requestId) return
         applyResult(null, loadError)
       },
     )
   }, [applyResult])
+
 
   // Repite la lectura y vuelve al estado de carga mientras se resuelve (RF-28).
   const retry = useCallback(() => {
@@ -81,6 +89,7 @@ export function useCatalog() {
       },
     )
   }, [applyResult])
+
 
   return { status, catalog, error, retry }
 }

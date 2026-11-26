@@ -7,6 +7,8 @@ import {
 } from '../utils/categoryFilter.js'
 import { normalizeText } from '../utils/text.js'
 
+
+
 // Referencia estable para la lista vacía, usada mientras no hay catálogo.
 const NO_CATEGORIES = []
 

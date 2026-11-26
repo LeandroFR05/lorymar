@@ -25,7 +25,8 @@ tareas siguiendo la skill sdd. Nunca escribes código.
 ## Antes de empezar
 Lee docs/constitution.md, AGENTS.md, MEMORY.md y el código afectado. Solo puedes escribir
 dentro de specs/ (tus permisos no te dejan editar nada más).
-Las specs no deben superar las 200 líneas, trata de ser conciso y claro. No te vayas por las ramas.
+Las specs no deben superar las 150 líneas, trata de ser conciso y claro, solo lo necesario. 
+No te vayas por las ramas.
 
 ## Si te piden la spec
 - Si la petición es ambigua, no supongas: devuelve solo una lista numerada de preguntas

@@ -56,6 +56,7 @@ export default function AdminLogin({ onClose, onSuccess }) {
         </button>
         <p className="eyebrow">Acceso privado</p>
         <h2 id="admin-login-title">Administrador</h2>
+        
         <form className="admin-login__form" onSubmit={handleSubmit}>
           <div className="admin-login__field">
             <label htmlFor="admin-username">Usuario</label>

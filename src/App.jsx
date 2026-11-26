@@ -16,6 +16,8 @@ export default function App() {
     <Suspense fallback={<p className="sr-only" role="status">Cargando…</p>}>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        
+        {/* Solo puedo acceder a esta ruta si estoy logueado */}
         <Route
           path="/admin"
           element={

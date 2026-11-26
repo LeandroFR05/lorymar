@@ -47,6 +47,7 @@ export default function ProductGrid({ status, catalog, error, retry }) {
           isIncomplete={Boolean(catalog?.incomplete)}
         />
 
+        {/* se muestran las tarjetas de los productos */}
         {visibleCards.length > 0 && (
           <div className="products__grid">
             {visibleCards.map((card) => (

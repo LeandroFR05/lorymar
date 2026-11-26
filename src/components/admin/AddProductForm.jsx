@@ -54,7 +54,7 @@ export default function AddProductForm() {
 
   return (
     <section aria-labelledby="add-product-title">
-      <h1 id="add-product-title">Agregar productos al catálogo</h1>
+      <h1 id="add-product-title">Nuevo producto</h1>
 
       <form className="admin-form" onSubmit={handleSubmit}>
         <div className="admin-form__field">
@@ -65,6 +65,18 @@ export default function AddProductForm() {
             type="text"
             required
             value={form.name}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="admin-form__field">
+          <label htmlFor="product-description">Descripción</label>
+          <textarea
+            id="product-description"
+            name="description"
+            rows="4"
+            required
+            value={form.description}
             onChange={handleChange}
           />
         </div>
@@ -88,18 +100,14 @@ export default function AddProductForm() {
             ))}
           </select>
         </div>
-
-        <div className="admin-form__field">
-          <label htmlFor="product-description">Descripción</label>
-          <textarea
-            id="product-description"
-            name="description"
-            rows="4"
-            required
-            value={form.description}
-            onChange={handleChange}
-          />
-        </div>
+        <div>   
+          <button type="button">
+            + Agregar variedad
+          </button>
+          <button type="button">
+            + Agregar presentación
+          </button>
+        </div>   
 
         <div className="admin-form__field">
           <label htmlFor="product-price">Precio ($)</label>
